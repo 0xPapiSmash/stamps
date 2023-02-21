@@ -1,4 +1,8 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable react/react-in-jsx-scope */
+import {
+  Html, Head, Main, NextScript,
+} from 'next/document';
 
 export default function Document() {
   return (
@@ -9,5 +13,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }
