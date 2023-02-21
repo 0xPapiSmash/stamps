@@ -1,0 +1,110 @@
+/** 
+REFRESHER ON TAILWIND CONFIG
+
+BASE:
+  The base is the first Tailwind CSS layer. What you see is what you will get on all devices. This is a good place to modify a base style, like changing how images behave by default or if paragraphs should have a bottom margin.
+
+  Note that here is very useful to add or modify anything want to make something more special than the default browser handling, but without going into full styling, since these styles must be overridable. 
+
+COMPONENTS:
+  Component classes mean "one class, many styles". 
+  Use this to create classes that will be re-used across different components.
+
+UTILITIES:
+  Utility classes mean "one class, one style." 
+  While Tailwind provides a pretty comprehensive set of utility classes out of the box, you may run into situations where you need to add a few of your own.
+
+VARIANTS:
+  Use this directive to control where Tailwind injects the hover, focus, responsive, dark mode, and other variants of each class.
+
+  If omitted, Tailwind will append these classes to the very end of your stylesheet by default.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    @apply box-border
+  }
+  h1 {
+    @apply text-3xl font-semibold text-gray-900
+  }
+  h2 {
+    @apply text-2xl font-medium text-gray-900
+  }
+  h3 {
+    @apply text-xl font-medium text-gray-900;
+  }
+  h4 {
+    @apply text-lg font-medium text-gray-900;
+  }
+  a {
+   @apply underline text-blue-600 hover:text-blue-800 cursor-pointer
+  }
+
+  body {
+    @apply bg-background
+  }
+}
+
+@layer components {
+
+  /* .card {
+    background-color: theme('colors.white');
+    border-radius: theme('borderRadius.lg');
+    padding: theme('spacing.6');
+    box-shadow: theme('boxShadow.xl');
+  }
+
+  .navbar-icon {
+    @apply relative flex flex-col items-center justify-center align-middle h-20 w-28 my-auto hover:text-primary rounded-md font-medium;
+  }
+
+  .btn {
+    @apply bg-primary text-gray-100 py-1 px-2 rounded-lg shadow-lg mx-4 text-sm;
+  }
+
+  .approve-btn {
+    @apply bg-primary;
+  }
+
+  .reject-btn {
+    @apply bg-secondary text-gray-900;
+  } */
+
+  
+}
+
+@layer utilities {
+  .scroll-snap-none {
+    scroll-snap-type: none;
+  }
+  .scroll-snap-x {
+    scroll-snap-type: x;
+  }
+  .scroll-snap-y {
+    scroll-snap-type: y;
+  }
+  .w-120 {
+    width: 32rem;
+  }
+  .w-144 {
+    width: 38rem;
+  }
+  .w-168 {
+    width: 44rem;
+  }
+  .progress-div {
+    background-color: rgb(233, 233, 233);
+    border-radius: .5rem;
+  }
+  .progress {
+    background-color: rgb(62, 122, 235);
+    height: 10px;
+    border-radius: 1rem;
+    transition: 1s ease;
+    transition-delay: 0.5s;
+  }
+}
