@@ -1,6 +1,9 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
 import Head from 'next/head';
+// eslint-disable-next-line import/no-unresolved
+import HeaderComponent from '../components/HeaderComponent';
 // import { Inter } from '@next/font/google';
 
 // const inter = Inter({ subsets: ['latin'] });
@@ -14,7 +17,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/stamps-logo.svg" />
       </Head>
-      <main />
+      <main className="flex flex-col h-screen">
+        <HeaderComponent />
+
+      </main>
     </>
   );
 }
